@@ -6,21 +6,21 @@ function ListGroup() {
   const [doneItems, setDoneItems] = useState([]);
   const [input, setInput] = useState("");
 
-  useEffect(() => {
-    const storedItems = localStorage.getItem("items");
-    const storedDoneItems = localStorage.getItem("doneItems");
+  // useEffect(() => {
+  //   const storedItems = localStorage.getItem("items");
+  //   const storedDoneItems = localStorage.getItem("doneItems");
 
-    if (storedItems) setItems(JSON.parse(storedItems));
-    if (storedDoneItems) setDoneItems(JSON.parse(storedDoneItems));
-  }, []);
+  //   if (storedItems) setItems(JSON.parse(storedItems));
+  //   if (storedDoneItems) setDoneItems(JSON.parse(storedDoneItems));
+  // }, []);
 
-  useEffect(() => {
-    localStorage.setItem("items", JSON.stringify(items));
-  }, [items]);
+  // useEffect(() => {
+  //   localStorage.setItem("items", JSON.stringify(items));
+  // }, [items]);
 
-  useEffect(() => {
-    localStorage.setItem("doneItems", JSON.stringify(doneItems));
-  }, [doneItems]);
+  // useEffect(() => {
+  //   localStorage.setItem("doneItems", JSON.stringify(doneItems));
+  // }, [doneItems]);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -55,7 +55,7 @@ function ListGroup() {
             className="form-control"
           />
           <button type="submit" className="btn btn-primary">
-            Add Activity
+            Add todo
           </button>
         </div>
       </form>
@@ -89,7 +89,7 @@ function ListGroup() {
               className="btn btn-danger btn-sm ms-3"
               onClick={() => handleDelete(index)}
             >
-              Remove
+              Remove todo
             </button>
           </li>
         ))}
